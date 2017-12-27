@@ -1,0 +1,35 @@
+<h1>Customer</h1>
+
+<div class="customerBlock">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td><%= "#{@customer.first_name} #{@customer.last_name}" %></td>
+      <td><%= @customer.phone %></td>
+      <td><%= @customer.email %></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+    </tr>
+    <tr>
+      <td><%= @customer.address %></td>
+    </tr>
+    <tr>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+    </tr>
+    <tr>
+      <td><%= @customer.city %></td>
+    <td><%= @customer.state %></td>
+      <td><%= @customer.zip %></td>
+    </tr>
+  </table>
+</div>
+  
+<%= link_to 'Back', customers_path %>
+

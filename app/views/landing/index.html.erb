@@ -1,0 +1,11 @@
+<div class="headertext">
+  <h1>CHS Dispatch</h1>
+</div>
+
+<div class="login_form">
+  <%= form_tag landing_post_path do %>
+    <%= text_field_tag :first_name, nil, placeholder: 'Username', autofocus: true %>
+    <%= text_field_tag :this, nil,  placeholder: 'Password' %>
+    <%= submit_tag 'Login' %>
+  <% end %>
+</div>

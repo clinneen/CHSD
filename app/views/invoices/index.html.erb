@@ -1,0 +1,29 @@
+
+<h1>Invoices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice ID</th>
+      <th>User</th>
+      <th>Customer</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.id %></td>
+        <td><%= invoice.user.username %></td>
+        <td><%= "#{invoice.customer.first_name} #{invoice.customer.last_name}" %></td>
+        <td><%= invoice.job_date %></td>
+        <td><%= link_to 'Show', invoice_path(invoice) %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

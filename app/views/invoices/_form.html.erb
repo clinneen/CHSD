@@ -1,0 +1,57 @@
+<h1>Edit Page</h1>
+
+<div class="customerBlock">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+    <tr>
+      <td><%= "#{invoice.customer.first_name} #{invoice.customer.last_name}" %></td>
+      <td><%= invoice.customer.phone %></td>
+      <td><%= invoice.customer.email %></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+    </tr>
+    <tr>
+      <td><%= invoice.customer.address %></td>
+    </tr>
+    <tr>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+    </tr>
+    <tr>
+      <td><%= invoice.customer.city %></td>
+    <td><%= invoice.customer.state %></td>
+      <td><%= invoice.customer.zip %></td>
+    </tr>
+  </table>
+</div>
+
+  <%= form_tag create_invoice_path do %>
+    <div class="miscBlock">
+      <table>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td><%= "#{invoice.user.first_name} #{invoice.user.last_name}" %></td>
+          <td><%= date_field_tag :job_date, invoice.job_date %></td>
+        </tr>
+      </table>
+    </div>
+    
+    <%= hidden_field_tag 'customer_id', invoice.customer_id %>
+    <%= hidden_field_tag 'user_id', invoice.user_id %>
+
+    <div class="itemsBlock">
+      <%= label_tag :items %>
+      <%= text_area_tag :items, invoice.items %>
+      <%= submit_tag 'Submit' %>
+    </div>
+  <% end %>
+

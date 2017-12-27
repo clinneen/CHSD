@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CHS</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="main_body">
+
+    <header>
+      <%= render 'layouts/top_menu' if controller_name!='landing' %>
+    </header>
+
+    <aside>
+      <%= render "layouts/side_menu_#{controller_name}" if controller_name!='landing' %>
+    </aside>
+
+    <div class="workspace">
+      <%= yield %>
+    </div>
+
+    <footer>
+    </footer>
+  </body>
+
+  </html>
